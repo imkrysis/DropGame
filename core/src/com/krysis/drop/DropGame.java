@@ -23,12 +23,15 @@ public class DropGame extends Game {
 
 	public SpriteBatch batch;
 	public BitmapFont font;
+	GameScreen gameScreen;
 
 	public void create() {
+
 		batch = new SpriteBatch();
-		//Use LibGDX's default Arial font.
+
 		font = new BitmapFont();
 		this.setScreen(new MainMenuScreen(this));
+
 	}
 
 	public void render() {
@@ -38,6 +41,19 @@ public class DropGame extends Game {
 	public void dispose() {
 		batch.dispose();
 		font.dispose();
+
+		if (gameScreen != null) {
+
+			gameScreen.dispose();
+
+		}
+
+	}
+
+	public  void setGameScreen(GameScreen gameScreen) {
+
+		this.gameScreen = gameScreen;
+
 	}
 
 }

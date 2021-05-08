@@ -12,6 +12,7 @@ public class MainMenuScreen implements Screen {
     OrthographicCamera camera;
 
     public MainMenuScreen(final DropGame game) {
+
         this.game = game;
 
         camera = new OrthographicCamera();
@@ -34,8 +35,10 @@ public class MainMenuScreen implements Screen {
         game.batch.end();
 
         if (Gdx.input.isTouched()) {
+
             game.setScreen(new GameScreen(game));
             dispose();
+
         }
 
     }
